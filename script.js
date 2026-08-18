@@ -1,27 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ==========================================================================
-       1. Sticky Header & Scroll Progress
+       1. Sticky Navbar & Scroll Progress Meter
        ========================================================================== */
     const navbar = document.querySelector('.navbar');
     const scrollProgress = document.getElementById('scroll-progress');
 
     window.addEventListener('scroll', () => {
-        // Sticky class
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
 
-        // Progress Bar Calculation
         const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
         const progress = (window.scrollY / totalHeight) * 100;
         scrollProgress.style.width = `${progress}%`;
     });
 
     /* ==========================================================================
-       2. Scroll Reveal Animations (Intersection Observer)
+       2. Reveal Animations (Intersection Observer)
        ========================================================================== */
     const revealElements = document.querySelectorAll('.reveal');
 
@@ -30,13 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
                 
-                // Trigger counter animation if element contains counters
                 const counters = entry.target.querySelectorAll('.counter');
                 if (counters.length > 0) {
                     counters.forEach(counter => runCounter(counter));
                 }
 
-                observer.unobserve(entry.target); // Reveal once
+                observer.unobserve(entry.target);
             }
         });
     }, {
@@ -46,12 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => revealObserver.observe(el));
 
     /* ==========================================================================
-       3. Animated Counter Stats
+       3. Animated Counter for PM Metrics
        ========================================================================== */
     function runCounter(counterEl) {
         const target = +counterEl.getAttribute('data-target');
         let count = 0;
-        const speed = target / 50; // Adjust division for speed
+        const speed = target / 40;
 
         const updateCount = () => {
             count += speed;
@@ -67,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ==========================================================================
-       4. Mobile Menu Toggle
+       4. Mobile Menu Controls
        ========================================================================== */
     const mobileToggle = document.querySelector('.mobile-toggle');
     const closeMenu = document.querySelector('.close-menu');
@@ -89,13 +86,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ==========================================================================
-       5. Contact Form Handler (Demo)
+       5. Interactive Mouse Parallax Effect on Hero Card
+       ========================================================================== */
+    const heroImageWrapper = document.querySelector('.hero-image-wrapper');
+    if (heroImageWrapper && window.innerWidth > 992) {
+        heroImageWrapper.addEventListener('mousemove', (e) => {
+            const rect = heroImageWrapper.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            const floats = heroImageWrapper.querySelectorAll('.floating-card');
+            floats.forEach((float, idx) => {
+                const factor = (idx + 1) * 0.03;
+                float.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
+            });
+        });
+
+        heroImageWrapper.addEventListener('mouseleave', () => {
+            const floats = heroImageWrapper.querySelectorAll('.floating-card');
+            floats.forEach(float => {
+                float.style.transform = `translate(0px, 0px)`;
+            });
+        });
+    }
+
+    /* ==========================================================================
+       6. Form Submission Simulation
        ========================================================================== */
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Thank you! Your message has been sent successfully.');
+            alert('Your PM inquiry has been logged! Nino will get back to you within 24 hours.');
             contactForm.reset();
         });
     }
