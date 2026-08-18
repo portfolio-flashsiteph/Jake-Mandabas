@@ -2,33 +2,27 @@
    DARK FUNKY CYBERPUNK DESIGN SYSTEM & ANIMATIONS
    ========================================================================== */
 :root {
-    /* Color Palette */
     --bg-primary: #08070d;
     --bg-secondary: #0f0d17;
     --bg-card: #161324;
     --text-primary: #f8fafc;
     --text-muted: #94a3b8;
     
-    /* Funky Neon Accents */
     --accent-cyan: #00f0ff;
     --accent-magenta: #ff007f;
     --accent-violet: #a855f7;
     --accent-yellow: #ffe600;
     --border-color: rgba(255, 255, 255, 0.1);
 
-    /* Gradients */
     --grad-funky: linear-gradient(135deg, var(--accent-cyan), var(--accent-magenta));
     --grad-glow: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(255, 0, 127, 0.15));
 
-    /* Typography */
     --font-heading: 'Syne', sans-serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
 
-    /* Transitions */
     --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Base Reset */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -82,7 +76,6 @@ img {
     background-color: var(--bg-secondary);
 }
 
-/* Scroll Progress Bar */
 #scroll-progress {
     position: fixed;
     top: 0;
@@ -94,7 +87,6 @@ img {
     box-shadow: 0 0 10px var(--accent-cyan);
 }
 
-/* Buttons & Badges */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -178,7 +170,6 @@ img {
     100% { box-shadow: 0 0 20px rgba(0, 240, 255, 0.6); }
 }
 
-/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -276,7 +267,6 @@ img {
     cursor: pointer;
 }
 
-/* Hero Section */
 .hero-section {
     padding: 180px 0 100px;
     min-height: 100vh;
@@ -429,12 +419,12 @@ img {
 .float-2 { bottom: 12%; right: -10%; }
 .float-3 { bottom: -5%; left: 15%; }
 
-/* Partner Marquee */
 .partner-marquee {
     background: var(--bg-card);
     padding: 20px 0;
     overflow: hidden;
-    border-y: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .marquee-track {
@@ -460,7 +450,6 @@ img {
     100% { transform: translateX(-50%); }
 }
 
-/* Sections Header */
 .section-header {
     text-align: center;
     max-width: 650px;
@@ -482,7 +471,6 @@ img {
     line-height: 1.15;
 }
 
-/* About & Stats Grid */
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -526,7 +514,6 @@ img {
     color: var(--text-muted);
 }
 
-/* Services Grid */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -574,7 +561,6 @@ img {
     font-size: 0.95rem;
 }
 
-/* Case Studies Section */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -650,32 +636,32 @@ img {
 }
 
 /* ==========================================================================
-   TESTIMONIAL SLIDER STYLES
+   TESTIMONIAL SLIDER STYLES (FIXED)
    ========================================================================== */
 .testimonial-slider-container {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
     position: relative;
+    overflow: hidden;
+    padding: 10px 0;
 }
 
 .testimonial-slider {
-    position: relative;
-    min-height: 260px;
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    width: 100%;
 }
 
 .testimonial-slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.5s ease-in-out;
-    transform: translateY(15px);
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    opacity: 0.4;
+    transition: opacity 0.4s ease;
 }
 
 .testimonial-slide.active {
     opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
 }
 
 .testimonial-card {
@@ -712,6 +698,7 @@ img {
     height: 50px;
     border-radius: 50%;
     border: 2px solid var(--accent-magenta);
+    object-fit: cover;
 }
 
 .testimonial-author h4 {
@@ -772,7 +759,6 @@ img {
     border-radius: 10px;
 }
 
-/* Contact Section */
 .contact-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -855,7 +841,6 @@ img {
     box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
 }
 
-/* Footer */
 .footer {
     padding: 40px 0;
     border-top: 1px solid var(--border-color);
@@ -906,7 +891,6 @@ img {
     box-shadow: 0 0 10px rgba(255, 0, 127, 0.4);
 }
 
-/* Scroll Reveal States */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -918,7 +902,6 @@ img {
     transform: translateY(0);
 }
 
-/* Responsive Styles */
 @media (max-width: 992px) {
     .hero-grid,
     .about-grid,
