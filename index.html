@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nino - Personal Portfolio Template</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress"></div>
+
+    <!-- Header / Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Nino<span>.</span></a>
+            <nav class="nav-links">
+                <a href="#hero" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-outline">Let's Talk</a>
+                <button class="mobile-toggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <button class="close-menu"><i class="fa-solid fa-xmark"></i></button>
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content reveal">
+                    <span class="badge"><i class="fa-solid fa-sparkles"></i> UX / UI Designer</span>
+                    <h1 class="hero-title">Nino Walker</h1>
+                    <p class="hero-description">
+                        Hi, I’m Walker, a passionate UX Designer dedicated to creating user-friendly digital experiences.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary">Get In Touch <i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                    
+                    <div class="client-reviews">
+                        <div class="avatar-group">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Client 1">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Client 2">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Client 3">
+                        </div>
+                        <div class="review-meta">
+                            <strong>100+ Reviews <span class="rating">★ 4.96</span></strong>
+                            <p>Five-star reviews from my esteemed clients.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-image-wrapper reveal">
+                    <div class="image-frame">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=80" alt="Nino Walker" class="hero-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partner Logos Marquee -->
+        <div class="partner-marquee">
+            <div class="marquee-track">
+                <span><span>✦</span> GOOGLE</span>
+                <span><span>✦</span> TESLA</span>
+                <span><span>✦</span> PAYDESK</span>
+                <span><span>✦</span> OXYZEN</span>
+                <span><span>✦</span> SPOTIFY</span>
+                <!-- Duplicate for seamless loop -->
+                <span><span>✦</span> GOOGLE</span>
+                <span><span>✦</span> TESLA</span>
+                <span><span>✦</span> PAYDESK</span>
+                <span><span>✦</span> OXYZEN</span>
+                <span><span>✦</span> SPOTIFY</span>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="sub-title">About Me</span>
+                    <h2>Crafting Intuitive & Engaging Digital Experiences</h2>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <p>I am Nino Walker, a seasoned UX designer with over 8 years of experience in crafting intuitive and engaging digital experiences. My journey began with a background in graphic design, where I discovered my passion for understanding user behavior and translating it into seamless interactions.</p>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card reveal">
+                            <h3 class="counter" data-target="8">0</h3>
+                            <p>Years Of Experience</p>
+                        </div>
+                        <div class="stat-card reveal">
+                            <h3 class="counter" data-target="150">0</h3>
+                            <p>Completed Projects</p>
+                        </div>
+                        <div class="stat-card reveal">
+                            <h3 class="counter" data-target="99">0</h3>
+                            <p>% Client Satisfactions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section-padding bg-alt">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="sub-title">Services</span>
+                    <h2>What I Offer</h2>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card reveal">
+                        <div class="service-index">01</div>
+                        <div class="service-icon"><i class="fa-solid fa-bezier-curve"></i></div>
+                        <h3>Brand Identity Design</h3>
+                        <p>Blend of strategic thinking and creative flair to craft a digital identity that resonates and captivates.</p>
+                    </div>
+
+                    <div class="service-card reveal">
+                        <div class="service-index">02</div>
+                        <div class="service-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                        <h3>Visual Design</h3>
+                        <p>Blend of artistic intuition with strategic insight to craft a visual identity suited for modern products.</p>
+                    </div>
+
+                    <div class="service-card reveal">
+                        <div class="service-index">03</div>
+                        <div class="service-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <h3>UX Research</h3>
+                        <p>Blend of functionality with aesthetics to create delightful, highly contextual web experiences.</p>
+                    </div>
+
+                    <div class="service-card reveal">
+                        <div class="service-index">04</div>
+                        <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3>Art Direction</h3>
+                        <p>Blend of strategic thinking and artistic finesse to craft a visual identity that goes beyond aesthetics.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-padding">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="sub-title">Portfolio</span>
+                    <h2>Featured Projects</h2>
+                </div>
+
+                <div class="projects-grid">
+                    <div class="project-card reveal">
+                        <div class="project-img-holder">
+                            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800&auto=format&fit=crop&q=80" alt="Glasses of Cocktail">
+                            <div class="project-overlay">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </div>
+                        <div class="project-meta">
+                            <span class="category">Branding</span>
+                            <h3>Glasses of Cocktail</h3>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal">
+                        <div class="project-img-holder">
+                            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&auto=format&fit=crop&q=80" alt="A Branch with Flowers">
+                            <div class="project-overlay">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </div>
+                        <div class="project-meta">
+                            <span class="category">Mockup</span>
+                            <h3>A Branch with Flowers</h3>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal">
+                        <div class="project-img-holder">
+                            <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800&auto=format&fit=crop&q=80" alt="Green Plant on Desk">
+                            <div class="project-overlay">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </div>
+                        <div class="project-meta">
+                            <span class="category">Product Design</span>
+                            <h3>Green Plant on a Desk</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding bg-alt">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-info reveal">
+                        <span class="sub-title">Contact Me</span>
+                        <h2>Have a project in mind?</h2>
+                        <p>Feel free to reach out for collaborations or just a friendly hello.</p>
+
+                        <div class="info-list">
+                            <div class="info-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <div>
+                                    <h5>Location</h5>
+                                    <p>Jurain, Dhaka Bangladesh</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fa-solid fa-phone"></i>
+                                <div>
+                                    <h5>Phone</h5>
+                                    <p>+123 456 7890</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <div>
+                                    <h5>Email</h5>
+                                    <p>websitename@mail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrapper reveal">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Nino. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
