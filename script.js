@@ -86,7 +86,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ==========================================================================
-       5. Interactive Mouse Parallax Effect on Hero Card
+       5. Testimonial Slider Controls
+       ========================================================================== */
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.slider-dots .dot');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+
+        currentSlide = (index + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
+
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                const targetIdx = parseInt(e.target.getAttribute('data-index'));
+                showSlide(targetIdx);
+            });
+        });
+
+        // Auto slide every 6 seconds
+        setInterval(() => showSlide(currentSlide + 1), 6000);
+    }
+
+    /* ==========================================================================
+       6. Interactive Mouse Parallax Effect on Hero Card
        ========================================================================== */
     const heroImageWrapper = document.querySelector('.hero-image-wrapper');
     if (heroImageWrapper && window.innerWidth > 992) {
@@ -111,13 +144,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ==========================================================================
-       6. Form Submission Simulation
+       7. Form Submission Simulation
        ========================================================================== */
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Your PM inquiry has been logged! Nino will get back to you within 24 hours.');
+            alert('Your PM inquiry has been logged! Jake will get back to you within 24 hours.');
             contactForm.reset();
         });
     }
