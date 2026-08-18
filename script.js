@@ -86,36 +86,64 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ==========================================================================
-       5. Testimonial Slider Controls
+       5. Testimonial Slider Controls (Fixed)
        ========================================================================== */
+    const sliderTrack = document.querySelector('.testimonial-slider');
     const slides = document.querySelectorAll('.testimonial-slide');
     const dots = document.querySelectorAll('.slider-dots .dot');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
     let currentSlide = 0;
+    let slideInterval;
 
-    function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
+    function updateSlider(index) {
+        if (!sliderTrack) return;
+        
+        if (index >= slides.length) {
+            currentSlide = 0;
+        } else if (index < 0) {
+            currentSlide = slides.length - 1;
+        } else {
+            currentSlide = index;
+        }
 
-        currentSlide = (index + slides.length) % slides.length;
-        slides[currentSlide].classList.add('active');
-        dots[currentSlide].classList.add('active');
+        sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === currentSlide);
+        });
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentSlide);
+        });
     }
 
-    if (prevBtn && nextBtn) {
-        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
-        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+    function resetTimer() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(() => {
+            updateSlider(currentSlide + 1);
+        }, 6000);
+    }
+
+    if (prevBtn && nextBtn && sliderTrack) {
+        prevBtn.addEventListener('click', () => {
+            updateSlider(currentSlide - 1);
+            resetTimer();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            updateSlider(currentSlide + 1);
+            resetTimer();
+        });
         
-        dots.forEach(dot => {
-            dot.addEventListener('click', (e) => {
-                const targetIdx = parseInt(e.target.getAttribute('data-index'));
-                showSlide(targetIdx);
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                updateSlider(index);
+                resetTimer();
             });
         });
 
-        // Auto slide every 6 seconds
-        setInterval(() => showSlide(currentSlide + 1), 6000);
+        resetTimer();
     }
 
     /* ==========================================================================
